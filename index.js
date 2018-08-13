@@ -253,7 +253,7 @@ client.on('message', message => {
                 if(body.players.now) {
                     status += '**' + body.players.now + '/' + body.players.max + '** people are playing! - MOTD: ' + body.motd;
                 } else {
-                    status += '*Nobody is playing!*';
+                    status += '*Nobody is playing!* **MOTD: ' + body.motd + '**';
                 }
             }
             message.reply(status);
