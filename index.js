@@ -457,7 +457,7 @@ if (subCmdMine == "start") {
     }
 } else if (subCmdMine == "stats") {
     var statsEmb = new discord.RichEmbed()
-    .setTitle(`Mine stats for <@${sender.id}>`)
+    .setTitle(`Mine stats for ${sender.username}`)
     .addField(`Pickaxe:`, `Pickaxe: ${marrData[sender.id].pickaxe}\nDurability: ${marrData[sender.id].pickDura}/100\nTimeout: ${marrData[sender.id].timeoutDuration}ms`)
     .addField(`Currency:`, `Coins: M$${marrData[sender.id].coins}\nEmojis: ${marrData[sender.id].emojis}`)
     .setColor(0x06B4B5)
