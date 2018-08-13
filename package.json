@@ -1,0 +1,17 @@
+{
+  "name": "morphex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.3.2",
+    "gamedig": "^1.0.46",
+    "is-reachable": "^2.4.0",
+    "request": "^2.88.0"
+  }
+}
