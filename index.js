@@ -51,7 +51,7 @@ client.on('message', message => {
 
     for (var i = 0; i < noMentionArray.length; i++) {
         if (message.content.includes(noMentionArray[i])) {
-            message.delete(0, 1)
+            message.delete(1, 1)
           break;
         }
       }
@@ -126,16 +126,6 @@ client.on('message', message => {
             client.users.get(marrData[sender.id].partner).send("❤ Your partner has kissed you!");
         } else {
             message.reply("you do not have a partner!")
-        }
-        break;
-
-        case "gift":
-        let amountToSend = message.content.replace("m!gift", "").replace(" ", "");
-        if (marrData[sender.id].partner != "" && marrData[sender.id].coins >= amountToSend) {
-            client.users.get(marrData[sender.id].partner).send(`❤ Your partner has sent you M$${amountToSend}!`);
-            marrData[sender.id].coins += amountToSend;
-        } else {
-            message.reply("you do not have a partner or not enought money!")
         }
         break;
 
@@ -467,7 +457,7 @@ if (subCmdMine == "start") {
     }
 } else if (subCmdMine == "stats") {
     var statsEmb = new discord.RichEmbed()
-    .setTitle(`Mine stats for ${sender.id}`)
+    .setTitle(`Mine stats for <@${sender.id}>`)
     .addField(`Pickaxe:`, `Pickaxe: ${marrData[sender.id].pickaxe}\nDurability: ${marrData[sender.id].pickDura}/100\nTimeout: ${marrData[sender.id].timeoutDuration}ms`)
     .addField(`Currency:`, `Coins: M$${marrData[sender.id].coins}\nEmojis: ${marrData[sender.id].emojis}`)
     .setColor(0x06B4B5)
