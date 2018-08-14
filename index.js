@@ -512,3 +512,21 @@ function writeToMarr() {
         if (err) console.log(err);
       })
 }
+
+function givePick(id, pickName) {
+    marrData[id].pickaxe = pickName
+    writeToMarr();
+}
+
+function setPickData(id, timeout, dura) {
+    marrData[id].timeoutDuration = timeout;
+    marrData[id].pickDura = dura
+    writeToMarr();
+}
+
+function setUserCurrency(id, coins, wins, emojis) {
+    marrData[id].emojis = emojis;
+    marrData[id].wins = wins
+    marrData[id].coins = coins;
+    writeToMarr();
+}
