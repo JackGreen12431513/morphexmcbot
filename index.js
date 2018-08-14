@@ -374,10 +374,10 @@ if (subcmd == "lobby") {
             var tordArr = ["truth", "dare"];
             var firstUser = usersPlaying[Math.floor(Math.random()*usersPlaying.length)];
             var secondUser = usersPlaying[Math.floor(Math.random()*usersPlaying.length)];
-            var tord = tordArr[Math.floor(Math.random()*tordArr.length)];
+            var realTord = tordArr[Math.floor(Math.random()*tordArr.length)];
             if (firstUser == secondUser) return;
             else {
-                message.channel.send(`${firstUser} will be giving ${secondUser} a ${tord}!`)
+                message.channel.send(`${firstUser} will be giving ${secondUser} a ${realTord}!`)
             }
         } else {
             message.channel.send(`1 more player needed!`)
