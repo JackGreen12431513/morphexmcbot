@@ -526,7 +526,25 @@ function setPickData(id, timeout, dura) {
 
 function setUserCurrency(id, coins, wins, emojis) {
     marrData[id].emojis = emojis;
-    marrData[id].wins = wins
+    marrData[id].wins = wins;
     marrData[id].coins = coins;
     writeToMarr();
 }
+
+function setPartner(id1, id2) {
+    marrData[id1].partner = id2;
+    marrData[id2].partner = id1;
+    writeToMarr();
+}
+
+function setBio(id, newBio) {
+    marrData[id].profileBio = newBio;
+}
+
+/*
+How to commit and update real app:
+1: git add . && git commit -m "Commit title"
+2. git push origin master
+3. heroku local
+4. git push heroku master
+*/
