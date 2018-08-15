@@ -4,6 +4,7 @@ const Gamedig = require('gamedig');
 const is_reachable = require('is-reachable');
 const fs = require('fs')
 var request = require('request');
+const repeat = require('repeat');
 
 var prefix = "m!"
 const marrData = JSON.parse(fs.readFileSync("marriageData.json", "utf8"));
@@ -39,11 +40,9 @@ function checkIfOnline(){
   var statusPlay = 0;
 
 client.on('ready', none => {
-    while (true) {
-        switchPlaying();
-    }
     var datetime = new Date();
     console.log("Ready! - " + datetime)
+    repeat(changePlaying());
 })
 
 client.on('guildCreate', joinedGuild => {
@@ -546,17 +545,17 @@ function setBio(id, newBio) {
     marrData[id].profileBio = newBio;
 }
 
-function switchPlaying() {
-    statusPlay = 0;
-    setInterval(function(none) {
-        if (statusPlay == 0) {
-            statusPlay += 1;
-            client.user.setActivity("on Morphex.aternos.me");
-        } else {
-            statusPlay -= 1;
-            client.user.setActivity("m!help");
-        }
-    }, 10000)
+function changePlaying() {
+    console.dir(statusPlay);
+        setInterval(function(){
+            if (statusPlay > 0) {
+                statusPlay -= 1;
+                client.user.setActivity("on morphex.aternos.me!")
+            } else {
+                statusPlay += 1;
+                client.user.setActivity("m!help")
+            }
+        }, 10000)
 }
 
 /*
