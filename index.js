@@ -39,7 +39,9 @@ function checkIfOnline(){
   var statusPlay = 0;
 
 client.on('ready', none => {
-    switchPlaying();
+    while (true) {
+        switchPlaying();
+    }
     var datetime = new Date();
     console.log("Ready! - " + datetime)
 })
