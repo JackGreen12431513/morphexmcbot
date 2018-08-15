@@ -39,6 +39,8 @@ function checkIfOnline(){
 
   
   var statusPlay = 0;
+  var isTordLocked = false;
+
 
 client.on('ready', none => {
     var datetime = new Date();
@@ -365,15 +367,19 @@ case "tord":
 let subcmd = message.content.replace("m!tord", "").replace(" ", "");
 if (subcmd == "lobby") {
     var tordLobbyEmb = new discord.RichEmbed()
-    .addField("Users playing:", usersPlaying.join("\n"))
+    .addField("🔒 Users playing:", usersPlaying.join("\n"))
     .setColor(0x06B4B5)
     message.channel.send(tordLobbyEmb)
 } else if (subcmd == "join") {
-    if (usersPlaying.includes("<@" + sender.id + ">")) message.channel.send("You are already in the lobby!");
-    else {
-        userPlayingAdd("<@" + sender.id + ">")
-        message.reply("joined!")
-        console.log(usersPlaying);
+    if (isTordLocked == false) {
+        if (usersPlaying.includes("<@" + sender.id + ">")) message.channel.send("You are already in the lobby!");
+        else {
+            userPlayingAdd("<@" + sender.id + ">")
+            message.reply("joined!")
+            console.log(usersPlaying);
+        }
+    } else {
+        message.reply("this room is locked!")
     }
 } else if (subcmd == "leave") {
     if (usersPlaying.includes("<@" + sender.id + ">")) message.channel.send("You are not in the lobby!");
@@ -396,6 +402,14 @@ if (subcmd == "lobby") {
         } else {
             message.channel.send(`1 more player needed!`)
         }
+    }
+} else if (subcmd == "lock") {
+    if (isTordLocked == false) {
+        message.channel.send("🔒 Locking room!'")
+        isTordLocked = true;
+    } else {
+        message.channel.send("🔐 Unlocking room")
+        isTordLocked = false;
     }
 }
 break;
