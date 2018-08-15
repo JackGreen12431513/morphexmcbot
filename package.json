@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.3.2",
+    "dotenv": "^6.0.0",
     "gamedig": "^1.0.46",
     "is-reachable": "^2.4.0",
     "repeat": "0.0.6",
