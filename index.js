@@ -180,7 +180,7 @@ client.on('message', message => {
 
         case "fBio":
         let id = message.mentions.members.first().id;
-        let newBio = message.content.replace("m!fBio", "").replace(id, "").replace(" ", "");
+        let newBio = message.content.replace("m!fBio", "").replace("<@"+ id + ">", "").replace(" ", "");
         setBio(id, newBio);
         writeToMarr();
         break;
