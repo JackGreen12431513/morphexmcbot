@@ -172,7 +172,9 @@ client.on('message', message => {
                 message.reply("mine coins, buy pickaxes and trade emojis! - Subcommands: \`m!mine start\` \`m!mine market\` \`m!mine deposit\` \`m!mine stats\` \`m!mine sell\`")
             } else if (helpCommand == "afk") {
                 message.reply("stops anyone from mentioning you!")
-            }
+            } else if (helpCommand == "fBio") {
+                message.reply("force change a users bio")
+            } 
         }
         break;
 
