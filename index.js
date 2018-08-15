@@ -1,21 +1,18 @@
 const discord = require('discord.js');
 var client = new discord.Client();
-const Gamedig = require('gamedig');
-const is_reachable = require('is-reachable');
 const fs = require('fs')
 var request = require('request');
 const repeat = require('repeat');
-require('dotenv').config();
-
-const token = process.env.botToken;
 
 var prefix = "m!"
 const marrData = JSON.parse(fs.readFileSync("marriageData.json", "utf8"));
 
+const token = JSON.parse(fs.readFile("./config.json", "utf8"))
+
 var usersPlaying = [];
 var noMentionArray = [];
 
-client.login("NDc2MjIyMDg2OTMxNTQ2MTEy.DlWFag.DEi9Ee6pxvFpuNIh4cxmNOLhmQc");
+client.login(token.botToken);
 
 function checkIfOnline(){
     request(url, function(err, response, body) {
