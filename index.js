@@ -554,7 +554,7 @@ function switchPlaying() {
             statusPlay -= 1;
             client.user.setActivity("m!help");
         }
-    })
+    }, 10000)
 }
 
 /*
