@@ -371,7 +371,7 @@ if (subcmd == "lobby") {
             var LockedtordLobbyEmb = new discord.RichEmbed()
             .addField("🔒 Users playing:", usersPlaying.join("\n"))
             .setColor(0x06B4B5)
-            message.channel.send(tordLobbyEmb)
+            message.channel.send(LockedtordLobbyEmb)
         } else {
             var tordLobbyEmb = new discord.RichEmbed()
             .addField("Users playing:", usersPlaying.join("\n"))
