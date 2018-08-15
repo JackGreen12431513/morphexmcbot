@@ -35,8 +35,11 @@ function checkIfOnline(){
 
   setInterval(checkIfOnline, 3.6e+6);
 
+  
+  var statusPlay = 0;
+
 client.on('ready', none => {
-    client.user.setActivity("on Morphex.aternos.me | Prefix: " + prefix)
+
     var datetime = new Date();
     console.log("Ready! - " + datetime)
 })
@@ -539,6 +542,19 @@ function setPartner(id1, id2) {
 
 function setBio(id, newBio) {
     marrData[id].profileBio = newBio;
+}
+
+function switchPlaying() {
+    statusPlay = 0;
+    setInterval(function(none) {
+        if (statusPlay == 0) {
+            statusPlay += 1;
+            client.user.setActivity("on Morphex.aternos.me");
+        } else {
+            statusPlay -= 1;
+            client.user.setActivity("m!help");
+        }
+    })
 }
 
 /*
