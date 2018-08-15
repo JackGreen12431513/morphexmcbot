@@ -15,7 +15,7 @@ const marrData = JSON.parse(fs.readFileSync("marriageData.json", "utf8"));
 var usersPlaying = [];
 var noMentionArray = [];
 
-client.login(token);
+client.login(dotenv.parse(token));
 
 function checkIfOnline(){
     request(url, function(err, response, body) {
