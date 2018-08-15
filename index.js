@@ -548,11 +548,11 @@ function setBio(id, newBio) {
 function changePlaying() {
     console.dir(statusPlay);
         setInterval(function(){
-            if (statusPlay > 0) {
-                statusPlay -= 1;
+            if (statusPlay == 0) {
+                statusPlay += 1;
                 client.user.setActivity("on morphex.aternos.me!")
             } else {
-                statusPlay += 1;
+                statusPlay -= 1;
                 client.user.setActivity("m!help")
             }
         }, 10000)
