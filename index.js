@@ -7,13 +7,15 @@ var request = require('request');
 const repeat = require('repeat');
 require('dotenv').config();
 
+const token = process.env.botToken;
+
 var prefix = "m!"
 const marrData = JSON.parse(fs.readFileSync("marriageData.json", "utf8"));
 
 var usersPlaying = [];
 var noMentionArray = [];
 
-client.login(process.env.botToken);
+client.login(token);
 
 function checkIfOnline(){
     request(url, function(err, response, body) {
