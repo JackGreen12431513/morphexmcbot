@@ -73,4 +73,5 @@ typings/
 .serverless
 
 #dotenv
-node_modules
+.environment
+.env
