@@ -565,4 +565,4 @@ How to commit and update real app:
 4. git push heroku master
 */
 
-client.login('NDc2MjIyMDg2OTMxNTQ2MTEy.DlWarA.0kkOoCBQ_8n8ZMamLbORup29Y2k');
+client.login(process.env.botToken);
