@@ -366,10 +366,17 @@ break;
 case "tord":
 let subcmd = message.content.replace("m!tord", "").replace(" ", "");
 if (subcmd == "lobby") {
-    var tordLobbyEmb = new discord.RichEmbed()
-    .addField("🔒 Users playing:", usersPlaying.join("\n"))
-    .setColor(0x06B4B5)
-    message.channel.send(tordLobbyEmb)
+    if (isTordLocked == true) {
+        var LockedtordLobbyEmb = new discord.RichEmbed()
+        .addField("🔒 Users playing:", usersPlaying.join("\n"))
+        .setColor(0x06B4B5)
+        message.channel.send(tordLobbyEmb)
+    } else {
+        var tordLobbyEmb = new discord.RichEmbed()
+        .addField("Users playing:", usersPlaying.join("\n"))
+        .setColor(0x06B4B5)
+        message.channel.send(tordLobbyEmb)
+    }
 } else if (subcmd == "join") {
     if (isTordLocked == false) {
         if (usersPlaying.includes("<@" + sender.id + ">")) message.channel.send("You are already in the lobby!");
@@ -405,7 +412,7 @@ if (subcmd == "lobby") {
     }
 } else if (subcmd == "lock") {
     if (isTordLocked == false) {
-        message.channel.send("🔒 Locking room!'")
+        message.channel.send("🔒 Locking room!")
         isTordLocked = true;
     } else {
         message.channel.send("🔐 Unlocking room")
