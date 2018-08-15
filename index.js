@@ -56,12 +56,9 @@ client.on('message', message => {
 
     var sender = message.author;
 
-    for (var i = 0; i < noMentionArray.length; i++) {
-        if (message.content.includes(noMentionArray[i])) {
-            message.delete(1, 1)
-          break;
-        }
-      }
+    if (message.content.includes("<@" + noMentionArray.indexOf(message.mentions.members.first()) +">")) {
+        message.delete(1, 1)
+    }
 
     if(!marrData[sender.id]) marrData[sender.id] = {
         partner: "",
