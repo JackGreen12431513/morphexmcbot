@@ -4,14 +4,12 @@ const fs = require('fs')
 var request = require('request');
 const repeat = require('repeat');
 require('dotenv').config();
-
+const conf = require('./config.json', 'utf8');
 console.log(token);
 
 var prefix = "m!"
 const marrData = JSON.parse(fs.readFileSync("marriageData.json", "utf8"));
-const config = JSON.parse(fs.readFileSync('config.json', 'utf8'));
-
-var token = config.botToken;
+var token = conf.botToken;
 
 var usersPlaying = [];
 var noMentionArray = [];
