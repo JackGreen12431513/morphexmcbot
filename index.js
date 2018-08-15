@@ -5,7 +5,7 @@ const is_reachable = require('is-reachable');
 const fs = require('fs')
 var request = require('request');
 const repeat = require('repeat');
-require('dotenv').config();
+const env = require('dotenv').config();
 
 const token = process.env.botToken;
 
@@ -15,7 +15,7 @@ const marrData = JSON.parse(fs.readFileSync("marriageData.json", "utf8"));
 var usersPlaying = [];
 var noMentionArray = [];
 
-client.login(dotenv.parse(token));
+client.login(env.parse(token));
 
 function checkIfOnline(){
     request(url, function(err, response, body) {
