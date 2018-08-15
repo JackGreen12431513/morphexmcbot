@@ -144,7 +144,7 @@ client.on('message', message => {
             .addField("💍 Roleplay Commands:", "`marry` `divorce` `kiss` `gift`", true)
             .addField("🎪 Fun Commands:", "`chatgame` `tord` `mine`", true)
             .addField("🔨 Utilities:", "`uuid` `afk`", true)
-            .addField("✏ Moderation Commands:", "`none`", true)
+            .addField("✏ Moderation Commands:", "`fBio`", true)
             .addField("⚙ Settings:", "`prefix` `setbio`", true)
             .setColor(0x06B4B5)
             message.channel.send(cmdsEmb)
@@ -174,6 +174,13 @@ client.on('message', message => {
                 message.reply("stops anyone from mentioning you!")
             }
         }
+        break;
+
+        case "fBio":
+        let id = message.mentions.members.first();
+        let newBio = message.content.replace("m!fBio", "").replace(id, "").replace(" ", "")
+        setBio(id, newBio);
+        writeToMarr();
         break;
 
         case "setbio":
