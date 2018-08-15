@@ -8,12 +8,9 @@ require('dotenv').config();
 var prefix = "m!"
 const marrData = JSON.parse(fs.readFileSync("marriageData.json", "utf8"));
 
-const config = process.env.botToken;
-
 var usersPlaying = [];
 var noMentionArray = [];
 
-client.login(config);
 
 function checkIfOnline(){
     request(url, function(err, response, body) {
@@ -567,3 +564,5 @@ How to commit and update real app:
 3. heroku local
 4. git push heroku master
 */
+
+client.login(process.env.botToken);
