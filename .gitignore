@@ -1,3 +1,5 @@
+config.json
+
 # Logs
 logs
 *.log
@@ -53,7 +55,6 @@ typings/
 
 # Yarn Integrity file
 .yarn-integrity
-config.json
 
 # dotenv environment variables file
 .env
