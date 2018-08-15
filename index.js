@@ -5,6 +5,8 @@ var request = require('request');
 const repeat = require('repeat');
 require('dotenv').config();
 
+console.log(process.env.token);
+
 var prefix = "m!"
 const marrData = JSON.parse(fs.readFileSync("marriageData.json", "utf8"));
 
@@ -565,4 +567,4 @@ How to commit and update real app:
 4. git push heroku master
 */
 
-client.login(process.env.botToken);
+client.login(process.env.token);
