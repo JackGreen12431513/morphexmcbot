@@ -3,16 +3,17 @@ var client = new discord.Client();
 const fs = require('fs')
 var request = require('request');
 const repeat = require('repeat');
+require('dotenv').config();
 
 var prefix = "m!"
 const marrData = JSON.parse(fs.readFileSync("marriageData.json", "utf8"));
 
-const config = JSON.parse(fs.readFileSync("config.json", "utf8"))
+const config = process.env.botToken;
 
 var usersPlaying = [];
 var noMentionArray = [];
 
-client.login(config.botToken);
+client.login(config);
 
 function checkIfOnline(){
     request(url, function(err, response, body) {
