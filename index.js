@@ -7,12 +7,12 @@ const repeat = require('repeat');
 var prefix = "m!"
 const marrData = JSON.parse(fs.readFileSync("marriageData.json", "utf8"));
 
-const token = JSON.parse(fs.readFile("./config.json", "utf8"))
+const config = JSON.parse(fs.readFileSync("config.json", "utf8"))
 
 var usersPlaying = [];
 var noMentionArray = [];
 
-client.login(token.botToken);
+client.login(config.botToken);
 
 function checkIfOnline(){
     request(url, function(err, response, body) {
