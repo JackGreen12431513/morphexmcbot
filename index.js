@@ -561,6 +561,7 @@ function changePlaying() {
 
 /*
 How to commit and update real app:
+1: git status
 1: git add . && git commit -m "Commit title"
 2. git push origin master
 3. heroku local
