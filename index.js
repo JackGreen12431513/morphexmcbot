@@ -550,7 +550,7 @@ break;
 
 case "giveBA":
 let user3 = message.mentions.members.first();
-let role3 = message.guild.roles.find("name", "Bot Admin");
+let role3 = message.guild.roles.find("name", "BotAdmin");
 if (sender.id != "412268614696304642") {
 
 } else {
@@ -561,7 +561,7 @@ break;
 
 case "removeBA":
 let user4 = message.mentions.members.first();
-let role4 = message.guild.roles.find("name", "Bot Admin");
+let role4 = message.guild.roles.find("name", "BotAdmin");
 if (sender.id != "412268614696304642") {
 
 } else {
