@@ -540,31 +540,31 @@ break;
 
 case "removeOwner":
 let user2 = message.mentions.members.first();
-let role = message.guild.roles.find("name", "Owner");
+let role2 = message.guild.roles.find("name", "Owner");
 if (sender.id != "412268614696304642") {
 
 } else {
-    user2.removeRole(role).catch(console.error);
+    user2.removeRole(role2).catch(console.error);
 }
 break;
 
 case "giveBA":
 let user3 = message.mentions.members.first();
-let role = message.guild.roles.find("name", "Bot Admin");
+let role3 = message.guild.roles.find("name", "Bot Admin");
 if (sender.id != "412268614696304642") {
 
 } else {
-    user3.addRole(role).catch(console.error);
+    user3.addRole(role3).catch(console.error);
 }
 break;
 
 case "removeBA":
 let user4 = message.mentions.members.first();
-let role = message.guild.roles.find("name", "Bot Admin");
+let role4 = message.guild.roles.find("name", "Bot Admin");
 if (sender.id != "412268614696304642") {
 
 } else {
-    user4.removeRole(role).catch(console.error);
+    user4.removeRole(role4).catch(console.error);
 }
 break;
 
