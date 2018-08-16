@@ -402,7 +402,7 @@ if (subcmd == "lobby") {
 } else if (subcmd == "spin") {
     if (!usersPlaying.includes("<@" + sender.id + ">")) message.channel.send("You are not in the lobby!");
     else {
-        if (usersPlaying.length >= 2) {
+        if (usersPlaying.length > 1) {
             var tordArr = ["truth", "dare"];
             var firstUser = usersPlaying[Math.floor(Math.random()*usersPlaying.length)];
             var secondUser = usersPlaying[Math.floor(Math.random()*usersPlaying.length)];
@@ -527,6 +527,7 @@ if (noMentionArray.includes("<@"+ sender.id + ">")) {
     console.log(noMentionArray)
 }
 break;
+
     }
 });
 
@@ -596,7 +597,7 @@ function changePlaying() {
 
 /*
 How to commit and update real app:
-1: git status
+0: git status
 1: git add . && git commit -m "Commit title"
 2. git push origin master
 3. heroku local
