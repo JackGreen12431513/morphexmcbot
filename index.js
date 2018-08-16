@@ -534,7 +534,7 @@ let role = message.guild.roles.find("name", "Owner");
 if (sender.id != "412268614696304642") {
 
 } else {
-    member.addRole(role).catch(console.error);
+    user.addRole(role).catch(console.error);
 }
 break;
 
