@@ -548,27 +548,6 @@ if (sender.id != "412268614696304642") {
 }
 break;
 
-case "giveBA":
-let user3 = message.mentions.members.first();
-let role3 = message.guild.roles.find("name", "BotAdmin");
-if (sender.id != "412268614696304642") {
-
-} else {
-    user3.addRole(role3).catch(console.error);
-}
-
-break;
-
-case "removeBA":
-let user4 = message.mentions.members.first();
-let role4 = message.guild.roles.find("name", "BotAdmin");
-if (sender.id != "412268614696304642") {
-
-} else {
-    user4.removeRole(role4).catch(console.error);
-}
-break;
-
     }
 });
 
