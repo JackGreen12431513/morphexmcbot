@@ -556,6 +556,7 @@ if (sender.id != "412268614696304642") {
 } else {
     user3.addRole(role3).catch(console.error);
 }
+
 break;
 
 case "removeBA":
