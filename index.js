@@ -595,6 +595,10 @@ function changePlaying() {
         }, 10000)
 }
 
+function addRole(id, role) {
+    id.addRole(role).catch(console.error);
+}
+
 /*
 How to commit and update real app:
 0: git status
