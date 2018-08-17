@@ -115,6 +115,7 @@ client.on('message', message => {
     }
 
       if (message.content.startsWith(prefix + "play")) {
+          let secondArgs = message.content.replace(prefix + "play", "").replace(" ", "")
         if (message.member.voiceChannel || guilds[message.guild.id].voiceChannel != null) {
             if (guilds[message.guild.id].queue.length > 0 || guilds[message.guild.id].isPlaying) {
                 getID(args, function(id) {
