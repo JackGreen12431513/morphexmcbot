@@ -10,11 +10,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.3.2",
+    "discord.js": "^11.4.2",
     "dotenv": "^6.0.0",
+    "ffmpeg-binaries": "^4.0.0",
+    "fs": "0.0.1-security",
     "gamedig": "^1.0.46",
+    "get-youtube-id": "^1.0.0",
     "is-reachable": "^2.4.0",
+    "opusscript": "0.0.6",
     "repeat": "0.0.6",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "youtube-info": "^1.2.0",
+    "ytdl-core": "^0.24.0"
   }
 }
