@@ -114,7 +114,7 @@ client.on('message', message => {
         };
     }
 
-      if (message.startsWith(prefix + "play")) {
+      if (message.content.startsWith(prefix + "play")) {
         if (message.member.voiceChannel || guilds[message.guild.id].voiceChannel != null) {
             if (guilds[message.guild.id].queue.length > 0 || guilds[message.guild.id].isPlaying) {
                 getID(args, function(id) {
@@ -141,7 +141,7 @@ client.on('message', message => {
             message.reply(" you need to be in a voice channel!");
         }
     }
-        else if (message.startsWith(prefix + "queue")) {
+        else if (message.content.startsWith(prefix + "queue")) {
             var message2 = "```";
             for (var i = 0; i < guilds[message.guild.id].queueNames.length; i++) {
                 var temp = (i + 1) + ": " + guilds[message.guild.id].queueNames[i] + (i === 0 ? "**(Current Song)**" : "") + "\n";
