@@ -748,6 +748,7 @@ function isYoutube(str) {
 }
 
 /*
+Yes
 How to commit and update real app:
 0: git status
 1: git add . && git commit -m "Commit title"
